@@ -1,3 +1,3 @@
-From : The Coding Train 
-Using Minimax Algorithm
-Lang : Typescript
+From : The Coding Train <br> 
+Using Minimax Algorithm <br>
+Lang : Typescript,JavaScript
