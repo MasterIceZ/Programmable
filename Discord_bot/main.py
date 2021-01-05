@@ -38,7 +38,13 @@ greet = [
   "สวัสดีครับท่านผู้เจริญ"
   ]
 
-command_list = "```Command List\n $q or $quote for Quotes\n $add [Quote] for add Quote \n $remove [Index of Quote] for remove Quote\n $list for List of Quotes]\n $fixed for Fixed Quotes\n $anime for anime quote\n $greet for Greetings```"
+hew = [
+  "กินตีนกูมาไอสัส",
+  "หิวแดกข้าวห้าวแดกตีน",
+  "น้ำพึ่งเรือ เสือพึ่งป่า อัชฌาสัย"
+]
+
+command_list = "```Command List\n $q or $quote for Quotes\n $add [Quote] for add Quote \n $remove [Index of Quote] for remove Quote\n $list for List of Quotes]\n $fixed for Fixed Quotes\n $anime for anime quote\n $greet for Greetings\n $กินไรดี for asking what should you eat```"
 '''
 bot = commands.Bot(command_prefix = ('$'), description = 'Hi')
 
@@ -77,7 +83,7 @@ async def on_message(msg):
     icy_message = msg.content.split('$add ', 1)[1]
     update_icy(icy_message)
     await msg.channel.send("Added Success!~")
-  if msg.content.startswith('remove'):
+  if msg.content.startswith('$remove'):
     icy_msg = []
     if "icy" in db.keys():
       idx = int(msg.content.split('$remove', 1)[1])
@@ -91,9 +97,15 @@ async def on_message(msg):
     await msg.channel.send(icy)
   if msg.content.startswith('$fixed'):
     idx = int(msg.content.split('$fixed', 1)[1])
+    if idx > len(db["icy"]) :
+      await msg.channel.send("ไม่มีโว้ย จะส่งมาทำเหี้ยไร")
+      return
     await msg.channel.send(db["icy"][idx - 1])
   if msg.content == '$greet' :
     await msg.channel.send(random.choice(greet))
+  if msg.content == "$กินไรดี" :
+    await msg.channel.send(random.choice(hew))
+
 
 
 '''
