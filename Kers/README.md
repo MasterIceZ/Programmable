@@ -3,6 +3,8 @@
 ```python
 python3 spammer.py
 ```
+2.Copy the text  
+3.Enjoy!
 
 ### Requirements
   - Python 3.6+
