@@ -1,7 +1,7 @@
 ### How to use
 1.Compile spammer.py by using this command 
 ```python
-python3 spammer.py
+python3 spamming.py
 ```
 2.Copy the text  
 3.Enjoy!
