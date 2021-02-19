@@ -4,6 +4,10 @@ using namespace std;
 
 int table[10][10];
 
+bool check_table(){
+
+}
+
 void get_table();
 	int n,m;
 	n = m = 3;
@@ -18,5 +22,9 @@ void get_table();
 int32_t main (void){
 	ios::sync_with_stdio(0); cin.tie(0);
 	get_table();
+	if(!check_table()){
+		cout << "Wrong Table" ;
+		return 0;	
+	}		
 	return 0;
 }
