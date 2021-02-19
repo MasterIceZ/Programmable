@@ -1,0 +1,12 @@
+# executable
+*.out
+
+# return type
+*.test
+test
+test.in
+test.out
+
+# Debug return 
+*.log
+*.dbg
