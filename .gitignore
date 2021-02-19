@@ -10,3 +10,6 @@ test.out
 # Debug return 
 *.log
 *.dbg
+
+# Vim Editor
+*.swp
