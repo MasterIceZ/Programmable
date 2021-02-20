@@ -74,8 +74,8 @@ int32_t main (void){
 		return 0;	
 	}	
 	if(!check_table_2()){
-		cout << "Wrong Table" << endl; 
-		cerr << "3*3" << endl;
+//		cout << "Wrong Table" << endl; 
+//		cerr << "3*3" << endl;
 		return 0;
 	}
 	cerr << "able";	
