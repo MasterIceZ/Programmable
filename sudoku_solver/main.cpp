@@ -8,10 +8,49 @@ using namespace std;
 #define endl '\n'
 #define space " "
 
-int table[10][10];
+int table[10][10], s[10][10];
 int mark[12];
 
+//Solve Suduku
+void solve();
+//Use to Debug the table
+void print();
+//check 3*3
+bool check_table_2();
+//Use for Vertical and Horizontal line only
+bool check_table();
+//Input Table
+void get_table();
 
+int32_t main (void){
+	ios::sync_with_stdio(0); cin.tie(0);
+	get_table();
+	print();
+	if(!check_table()){
+		cout << "Wrong Table" << endl;
+//		cerr << "v/t" << endl;
+		return 0;	
+	}	
+	if(!check_table_2()){
+		cout << "Wrong Table" << endl;
+//		cerr << "3*3" << endl;
+		return 0;
+	}
+//	cerr << "able";i
+
+	solve();	
+	return 0;
+}
+
+void solve(){
+	//Implement
+	//Copy Table
+	for(int i=1;i<=9;++i){
+		for(int j=1;j<=9;++j){
+			s[i][j] = table[i][j];
+		}
+	}
+}
 
 //Use to Debug the table
 void print(){
@@ -74,22 +113,4 @@ void get_table(){
 			cin >> table[i][j];
 		}
 	}
-}
-
-int32_t main (void){
-	ios::sync_with_stdio(0); cin.tie(0);
-	get_table();
-	print();
-	if(!check_table()){
-		cout << "Wrong Table" << endl;
-//		cerr << "v/t" << endl;
-		return 0;	
-	}	
-	if(!check_table_2()){
-		cout << "Wrong Table" << endl;
-//		cerr << "3*3" << endl;
-		return 0;
-	}
-//	cerr << "able";	
-	return 0;
 }
