@@ -1,37 +1,48 @@
+//O(1)
+//By Hydrolyzed~
 #include<iostream>
 #include<cstring>
 
 using namespace std;
 
+#define endl '\n'
+#define space " "
+
 int table[10][10];
 int mark[12];
 
-//Check Every 3*3
-bool check_ev(int n,int m){
-	memset(mark, 0, sizeof mark);
-	for(int i=0;i<3;++i){
-		for(int j=0;j<3;++j){
-			mark[table[i+n][j+m]]++;
+
+
+//Use to Debug the table
+void print(){
+	for(int i=1;i<=9;++i){
+		for(int j=1;j<=9;++j){
+			cout << table[i][j] << " ";
 		}
-	}	
-	for(int i=1;i<10;++i){
-		if(mark[i] > 1){
-			return false;
-		}
+		cout << endl;
 	}
-	return true;
 }
 
-//Use for every 3*3
 bool check_table_2(){
-	for(int i=1;i<9;i+=3){
-		for(int j=1;i<9;j+=3){
-			bool mk = check_ev(i,j);
-			if(!mk){
-				return false;
+	for(int i=1; i<=9;i+=3){
+		for(int j=1;j<=9;j+=3){
+			memset(mark, 0, sizeof mark);
+			for(int k=0;k<3;++k){
+				for(int l=0;l<3;++l){
+//					cout << table[i+k][j+l] << " ";
+					mark[table[i+k][j+l]]++;
+				}
+//				cout << endl;
+			}
+
+			for(int k=1;k<10;++k){
+				if(mark[k] > 1){
+					return false;
+				}
+//				cout << i << " " << mark[i] << endl;
 			}
 		}
-	}	
+	}
 	return true;
 }
 
@@ -57,7 +68,7 @@ bool check_table(){
 }
 
 void get_table(){
-	int n = 3;
+	int n = 9;
 	for(int i=1;i<=n;++i){
 		for(int j=1;j<=n;++j){
 			cin >> table[i][j];
@@ -68,16 +79,17 @@ void get_table(){
 int32_t main (void){
 	ios::sync_with_stdio(0); cin.tie(0);
 	get_table();
+	print();
 	if(!check_table()){
 		cout << "Wrong Table" << endl;
-		cerr << "v/t" << endl;
+//		cerr << "v/t" << endl;
 		return 0;	
 	}	
 	if(!check_table_2()){
-//		cout << "Wrong Table" << endl; 
+		cout << "Wrong Table" << endl;
 //		cerr << "3*3" << endl;
 		return 0;
 	}
-	cerr << "able";	
+//	cerr << "able";	
 	return 0;
 }
