@@ -2,13 +2,15 @@
 //By Hydrolyzed~
 #include<iostream>
 #include<cstring>
+#include<map>
+#include<vector>
 
 using namespace std;
 
 #define endl '\n'
 #define space " "
 
-int table[10][10], s[10][10];
+int table[10][10];
 int mark[12];
 
 //Solve Suduku
@@ -36,20 +38,18 @@ int32_t main (void){
 //		cerr << "3*3" << endl;
 		return 0;
 	}
-//	cerr << "able";i
+//	cerr << "able";
 
 	solve();	
 	return 0;
 }
 
+
+
+//Solve
 void solve(){
-	//Implement
-	//Copy Table
-	for(int i=1;i<=9;++i){
-		for(int j=1;j<=9;++j){
-			s[i][j] = table[i][j];
-		}
-	}
+	map<pair<int,int>, vector<int>> s;
+		
 }
 
 //Use to Debug the table
@@ -106,6 +106,7 @@ bool check_table(){
 	return true;
 }
 
+//Input Table
 void get_table(){
 	int n = 9;
 	for(int i=1;i<=n;++i){
