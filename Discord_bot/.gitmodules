@@ -1,0 +1,3 @@
+[submodule "genlib"]
+	path = genlib
+	url = https://github.com/MasterIceZ/genlib.git
